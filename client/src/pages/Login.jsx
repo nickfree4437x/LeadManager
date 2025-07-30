@@ -19,7 +19,7 @@ function Login() {
     e.preventDefault();
     setIsLoading(true);
     try {
-      const res = await axios.post("http://localhost:5000/api/login", formData);
+      const res = await axios.post("https://leadmanager-fvgq.onrender.com/api/login", formData);
       localStorage.setItem("token", res.data.token);
       setMessage("Login successful");
       setTimeout(() => navigate("/dashboard"), 1500);

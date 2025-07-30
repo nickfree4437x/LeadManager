@@ -28,7 +28,7 @@ const AddAgentForm = () => {
     setIsLoading(true);
 
     try {
-      const res = await axios.post('http://localhost:5000/api/agents/add', formData);
+      const res = await axios.post('https://leadmanager-fvgq.onrender.com/api/agents/add', formData);
       setMessage(res.data.message);
       setFormData({ name: '', email: '', mobile: '', password: '' });
     } catch (err) {

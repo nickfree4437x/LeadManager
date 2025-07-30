@@ -15,7 +15,7 @@ function EditAgent() {
   useEffect(() => {
     const fetchAgent = async () => {
       try {
-        const response = await axios.get(`http://localhost:5000/api/agents/${id}`);
+        const response = await axios.get(`https://leadmanager-fvgq.onrender.com/api/agents/${id}`);
         setAgent(response.data);
       } catch (error) {
         console.error("Error fetching agent:", error);
@@ -38,7 +38,7 @@ function EditAgent() {
     setMessage({ text: "", type: "" });
     
     try {
-      await axios.put(`http://localhost:5000/api/agents/${id}`, agent);
+      await axios.put(`https://leadmanager-fvgq.onrender.com/api/agents/${id}`, agent);
       setMessage({ text: "Agent updated successfully!", type: "success" });
       setTimeout(() => navigate("/view-agents"), 1500);
     } catch (error) {

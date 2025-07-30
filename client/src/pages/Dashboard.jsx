@@ -14,8 +14,8 @@ function Dashboard() {
   const fetchDashboardData = async () => {
     try {
       const [agentsRes, leadsRes] = await Promise.all([
-        axios.get("http://localhost:5000/api/agents"),
-        axios.get("http://localhost:5000/api/distributed")
+        axios.get("https://leadmanager-fvgq.onrender.com/api/agents"),
+        axios.get("https://leadmanager-fvgq.onrender.com/api/distributed")
       ]);
 
       let totalLeads = 0;

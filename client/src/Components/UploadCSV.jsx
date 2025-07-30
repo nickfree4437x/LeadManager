@@ -57,7 +57,7 @@ function UploadCSV() {
       const phones = data.map(item => item.Phone).filter(Boolean);
       if (phones.length === 0) return;
       
-      const res = await axios.post("http://localhost:5000/api/upload/check-duplicates", { phones });
+      const res = await axios.post("https://leadmanager-fvgq.onrender.com/api/upload/check-duplicates", { phones });
       setDuplicates(res.data.duplicates || []);
     } catch (err) {
       console.error("Duplicate check failed:", err);
@@ -66,7 +66,7 @@ function UploadCSV() {
 
   const fetchDistributedData = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/distributed");
+      const res = await axios.get("https://leadmanager-fvgq.onrender.com/api/distributed");
       setDistributedData(res.data);
     } catch (err) {
       console.error("Failed to fetch distributed data:", err);
@@ -94,7 +94,7 @@ function UploadCSV() {
     setMessage({ text: "", type: "" });
 
     try {
-      const res = await axios.post("http://localhost:5000/api/upload", formData, {
+      const res = await axios.post("https://leadmanager-fvgq.onrender.com/api/upload", formData, {
         headers: { "Content-Type": "multipart/form-data" },
         onUploadProgress: (progressEvent) => {
           const percentCompleted = Math.round(

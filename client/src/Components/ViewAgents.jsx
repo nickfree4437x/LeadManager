@@ -18,7 +18,7 @@ function ViewAgents() {
 
   const fetchAgents = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/api/agents");
+      const response = await axios.get("https://leadmanager-fvgq.onrender.com/api/agents");
       setAgents(Array.isArray(response.data) ? response.data : []);
     } catch (error) {
       console.error("Error fetching agents:", error);
@@ -32,7 +32,7 @@ function ViewAgents() {
     if (!window.confirm("Are you sure you want to delete this agent?")) return;
 
     try {
-      await axios.delete(`http://localhost:5000/api/agents/${id}`);
+      await axios.delete(`https://leadmanager-fvgq.onrender.com/api/agents/${id}`);
       setAgents(prev => prev.filter(agent => agent._id !== id));
     } catch (error) {
       console.error("Error deleting agent:", error);

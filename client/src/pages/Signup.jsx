@@ -23,7 +23,7 @@ function Signup() {
     e.preventDefault();
     setIsLoading(true);
     try {
-      const res = await axios.post("http://localhost:5000/api/signup", formData);
+      const res = await axios.post("https://leadmanager-fvgq.onrender.com/api/signup", formData);
       localStorage.setItem("token", res.data.token);
       setMessage("Signup successful");
       setTimeout(() => navigate("/dashboard"), 1500);
